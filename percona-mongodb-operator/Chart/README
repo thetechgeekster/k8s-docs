@@ -1,0 +1,2 @@
+helm repo add percona https://percona.github.io/percona-helm-charts/
+helm install my-operator percona/psmdb-operator --version 1.10.0 --namespace my-namespace

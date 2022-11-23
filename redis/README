@@ -1,0 +1,4 @@
+$ helm repo add bitnami https://charts.bitnami.com/bitnami
+$ helm install my-release bitnami/redis
+
+Chart folder only if Github is Down and for debug purposes

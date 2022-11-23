@@ -1,0 +1,9 @@
+It is important to understand that HELM is NOT installed in the K8S server but
+in client that has access to the server and does the deployment stuff...
+
+You can install it in the server BUT IS NOT BEST PRACTICE!!!
+Better on your machine!
+
+$ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+$ chmod 700 get_helm.sh
+$ ./get_helm.sh

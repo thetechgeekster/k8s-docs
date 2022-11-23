@@ -1,0 +1,8 @@
+kubectl apply -f ./crd.yaml
+kubectl config set-context $(kubectl config current-context) --namespace=<namespace name>
+kubectl apply -f ./rbac.yaml
+kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin --user=admin
+kubectl apply -f ./operator.yaml
+kubectl create -f ./secrets.yaml
+kubectl run -i --rm --tty percona-client --image=percona/percona-server-mongodb:4.4.8-9 --restart=Never -- bash -il
+percona-client:/$ mongo "mongodb://userAdmin:userAdmin123456@my-cluster-name-mongos.<namespace name>.svc.cluster.local/admin?ssl=false"
